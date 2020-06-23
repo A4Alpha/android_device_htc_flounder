@@ -4,7 +4,7 @@
 TARGET_SCREEN_HEIGHT := 2048
 TARGET_SCREEN_WIDTH := 1536
 
-# Inherit some common Lineage stuff
+# Inherit some common RR stuff
 $(call inherit-product, vendor/rr/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
