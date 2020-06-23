@@ -107,7 +107,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bt_vendor.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/bt_vendor.conf
 
 # GPS configs
-ifneq ($(filter lineage_flounder volantis volantisf, $(TARGET_PRODUCT)),)
+ifneq ($(filter rr_flounder volantis volantisf, $(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/bcm/gps.bcm47521.conf:system/etc/gps.bcm47521.conf \
     $(LOCAL_PATH)/gps/bcm/gpsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gpsconfig.xml
@@ -132,7 +132,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
-ifneq ($(filter lineage_flounder volantis volantisf, $(TARGET_PRODUCT)),)
+ifneq ($(filter rr_flounder volantis volantisf, $(TARGET_PRODUCT)),)
 # Wifi-Only overlays.
 DEVICE_PACKAGE_OVERLAYS := \
     $(LOCAL_PATH)/wifi_only_overlay \
@@ -313,7 +313,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     device/htc/flounder/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
-# Verity dependencies (only on user builds for Lineage)
+# Verity dependencies (only on user builds for RR)
 ifeq ($(TARGET_BUILD_VARIANT),user)
 $(call inherit-product, build/target/product/verity.mk)
 PRODUCT_SUPPORTS_BOOT_SIGNER := false
@@ -340,7 +340,7 @@ endif
 $(call inherit-product-if-exists, hardware/nvidia/tegra132/tegra132.mk)
 $(call inherit-product-if-exists, vendor/nvidia/proprietary-tegra132/tegra132-vendor.mk)
 $(call inherit-product, vendor/htc/flounder-common/flounder-common-vendor.mk)
-ifeq ($(TARGET_PRODUCT),lineage_flounder_lte)
+ifeq ($(TARGET_PRODUCT),rr_flounder_lte)
     $(call inherit-product, vendor/htc/flounder_lte/flounder_lte-vendor.mk)
 else
     $(call inherit-product, vendor/htc/flounder/flounder-vendor.mk)
