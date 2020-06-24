@@ -13,9 +13,7 @@ $(call inherit-product, device/htc/flounder/aosp_flounder.mk)
 $(call inherit-product-if-exists, vendor/htc/flounder/device-vendor.mk)
 
 # Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/htc/flounder
-TARGET_KERNEL_CONFIG := lineage_flounder_defconfig
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_PREBUILT_KERNEL := device/htc/flounder/zImage
 
 # Extra Packages
 PRODUCT_PACKAGES += \
